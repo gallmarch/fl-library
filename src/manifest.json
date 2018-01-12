@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "Fallen London Library",
+  "description": "This extension for Fallen London adds a 'Library' category to your inventory.",
+  "browser_action": {
+    "default_popup": "popup/popup.html"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "version": VERSION,
+  "content_scripts": [
+    {
+      "matches": ["http://fallenlondon.storynexus.com/Gap/Load*"],
+      "css": [
+        "styles.css"
+      ],
+      "js": [
+        "content-script.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}
