@@ -1,13 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import reduxThunk from 'redux-thunk';
 import MutationSummary from 'mutation-summary';
 
 // eslint-disable-next-line no-unused-vars
-import styles from './styles.scss'
-import reducer from './reducer';
+import styles from './styles.scss';
 import Extension from './Extension';
 
 watchForInventorySection();
@@ -33,7 +29,6 @@ function watchForInventorySection() {
     // Create a container element
     const parent = document.querySelector('div.you_bottom_rhs');
     const h3s = Array.from(parent.querySelectorAll('h3'));
-    console.info(h3s);
     const lodgingsElement = (() => {
       // Almost every user will have a 'Lodgings' section...
       const elements = h3s.filter(h3 => h3.innerText === 'Lodgings');

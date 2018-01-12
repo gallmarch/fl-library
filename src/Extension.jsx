@@ -1,4 +1,5 @@
-import React, { Component, Fragment } from 'react';
+/* eslint-disable react/no-danger */
+import React, { Fragment } from 'react';
 import * as items from './items';
 
 export default function Extension() {
@@ -10,7 +11,7 @@ export default function Extension() {
           Object.keys(items)
             .filter(key => key !== 'USEFUL_ITEMS')
             .filter(key => !!document.querySelector(`div#infoBarQImage${items[key]}`))
-            .map(key => {
+            .map((key) => {
               const li = document.querySelector(`div#infoBarQImage${items[key]}`)
                 .parentElement
                 .parentElement;
