@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import MutationSummary from 'mutation-summary';
 
-// eslint-disable-next-line no-unused-vars
-import styles from './styles.scss';
 import Extension from './Extension';
 
 watchForInventorySection();

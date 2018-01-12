@@ -1,6 +1,6 @@
 {
   "name": "fl-library",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Add a 'Library' category to the Fallen London inventory",
   "author": "sdobuadhachain@gmail.com",
   "license": "MIT",
@@ -10,16 +10,12 @@
     "mutation-summary": "^0.1.1",
     "prop-types": "^15.5.10",
     "react": "^16.2",
-    "react-dom": "^16.2",
-    "react-redux": "^5.0.6",
-    "redux": "^3.7.2",
-    "redux-localstorage": "^0.4.1",
-    "redux-thunk": "^2.2.0"
+    "react-dom": "^16.2"
   },
   "scripts": {
     "cleanup": "rimraf dist/ && rimraf build/",
     "build": "yarn cleanup && webpack",
-    "dist": "rimraf dist/ && webpack -p",
+    "dist": "rimraf dist/ && NODE_ENV=production webpack -p",
     "lint": "eslint 'src/**/*.@(js|jsx)'",
     "start": "yarn cleanup && webpack --progress --watch"
   },

@@ -11,11 +11,6 @@ const version = require(path.join(__dirname, 'package.json')).version;
 const copy = new CopyWebpackPlugin([
   {
     context: './src/',
-    from: 'popup/popup.html',
-    to: 'popup/popup.html',
-  },
-  {
-    context: './src/',
     from: 'manifest.json',
     to: 'manifest.json',
     transform: (content) => {
@@ -32,7 +27,6 @@ const zip = new ZipPlugin({
 module.exports = {
   entry: {
     'content-script.js': './src/main.jsx',
-    'popup/popup.js': './src/popup/main.jsx',
   },
   output: {
     path: './build/',
@@ -40,12 +34,6 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.scss$/,
-        use: ExtractTextWebpackPlugin.extract({
-          use: ['css-loader', 'sass-loader']
-        }),
-      },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
@@ -59,7 +47,6 @@ module.exports = {
   plugins: [
     copy,
     zip,
-    new ExtractTextWebpackPlugin('styles.css'),
   ],
   resolve: {
     extensions: ['.js', '.jsx'],
