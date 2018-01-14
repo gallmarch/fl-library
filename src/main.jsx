@@ -32,6 +32,8 @@ function watchForInventorySection() {
       return;
     }
 
+    // Pad the new category with empty-icon elements until it's 0 mod 6
+    // elements long
     while (elements.length % 6 > 0) {
       elements.push(<li key={elements.length % 6} className="empty-icon" />);
     }
@@ -74,6 +76,7 @@ function watchForInventorySection() {
 }
 
 function createElements() {
+  // Return a list of copies of items whose IDs match our list of relevant items
   return Object.keys(items)
     .filter(key => !!document.querySelector(`div#infoBarQImage${items[key]}`))
     .map((key) => {
