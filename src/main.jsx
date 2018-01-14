@@ -75,7 +75,6 @@ function watchForInventorySection() {
 
 function createElements() {
   return Object.keys(items)
-    .filter(key => key !== 'USEFUL_ITEMS')
     .filter(key => !!document.querySelector(`div#infoBarQImage${items[key]}`))
     .map((key) => {
       const li = document.querySelector(`div#infoBarQImage${items[key]}`)
